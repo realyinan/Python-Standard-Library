@@ -25,7 +25,34 @@ def write_csv(filename):
 
     file_instance.close()
 
+def write_csv2(filename):
+    file_instance = open(filename, 'w', encoding='utf8')
+
+    header = ['Name', 'Chinese', 'English', 'Math']
+    rows = [
+        {'Name': 'zhangsan',
+         'Chinese': 89,
+         'English': 76,
+         'Math': 90},
+        {'Name': 'lisi',
+         'Chinese': 84,
+         'English': 97,
+         'Math': 34},
+        {'Name': 'wangwu',
+         'Chinese': 83,
+         'English': 66,
+         'Math': 92}
+    ]
+
+    csv_writer = csv.DictWriter(file_instance, fieldnames=header)
+
+    csv_writer.writeheader()
+    csv_writer.writerows(rows)
+
+    file_instance.close()
+
 
 if __name__ == '__main__':
     # read_csv('./students.csv')
-    write_csv('./students2.csv')
+    # write_csv('./students2.csv')
+    write_csv2('./students3.csv')
