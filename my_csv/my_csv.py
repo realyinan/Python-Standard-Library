@@ -9,6 +9,13 @@ def read_csv(filename):
 
     file_instance.close()
 
+def read_csv2(filename):
+    file_instance = open(filename, encoding='utf8')
+    csv_reader = csv.DictReader(file_instance)
+
+    for row in csv_reader:
+        print(row)
+
 def write_csv(filename):
     file_instance = open(filename, 'w',  encoding='utf8')
     csv_writer = csv.writer(file_instance)
@@ -55,4 +62,5 @@ def write_csv2(filename):
 if __name__ == '__main__':
     # read_csv('./students.csv')
     # write_csv('./students2.csv')
-    write_csv2('./students3.csv')
+    # write_csv2('./students3.csv')
+    read_csv2('./students.csv')
