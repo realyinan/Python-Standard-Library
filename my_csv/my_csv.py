@@ -63,4 +63,4 @@ if __name__ == '__main__':
     # read_csv('./students.csv')
     # write_csv('./students2.csv')
     # write_csv2('./students3.csv')
-    read_csv2('./students.csv')
+    read_csv2('my_csv\students.csv')

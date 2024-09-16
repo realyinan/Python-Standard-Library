@@ -16,6 +16,11 @@ def main():
             break
 
         process_command(command, student_data)
+        
+    try:
+        save_data(student_data)
+    except:
+        print('error happened')
 
 
 
