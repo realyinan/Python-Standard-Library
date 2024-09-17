@@ -3,7 +3,8 @@ COMMAND_LIST = {
     "list",
     "delete",
     "edit",
-    "exit"
+    "exit",
+    "average"
 }
 
 def get_user_command() -> str:

@@ -1,5 +1,6 @@
 import csv
 import os
+from common import course_def
 
 file = "student_manager\store\students.csv"
 
@@ -12,8 +13,7 @@ def load_data() -> dict:
         for row in csv_reader:
             name = row.get("Name")
             result[name] = row
-        # print(result)
-
+        
         return result
 
 def save_data(student_data: dict):
@@ -21,7 +21,8 @@ def save_data(student_data: dict):
 
     if len(student_data) > 0:
         rows = list(student_data.values())
-        csv_writer = csv.DictWriter(file_instance, fieldnames=rows[0].keys())
+        headers = course_def.CPURSE_NAME_LIST.union({"Name"})
+        csv_writer = csv.DictWriter(file_instance, fieldnames=headers)
         csv_writer.writeheader()
         csv_writer.writerows(rows)
 
